@@ -1,6 +1,7 @@
 #include "dll.h"
 #include <memory.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /* Public Function Implementation to create and return
  * new empty doubly linked list*/
