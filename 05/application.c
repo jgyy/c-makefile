@@ -3,7 +3,8 @@
 #include <string.h>
 #include <stdio.h>
 
-/*Application specific data structures*/
+// gcc -c application.c -o application.o && gcc application.o -o exe -L . -ldll && ./exe;
+
 typedef struct person_
 {
     char name[32];
@@ -38,8 +39,7 @@ print_person_db(dll_t *person_db)
     }
 }
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv){
 
     person_t *person1 = calloc(1, sizeof(person_t));
     strncpy(person1->name, "Abhishek", strlen("Abhishek"));
@@ -56,12 +56,12 @@ int main(int argc, char **argv)
 
     /*Create a new Linked List*/
 
-    dll_t *person_db = _dll();
+    dll_t *person_db = get_new_dll();
     add_data_to_dll(person_db, person1);
     add_data_to_dll(person_db, person2);
     add_data_to_dll(person_db, person3);
 
     print_person_db(person_db);
-
+    
     return 0;
 }
